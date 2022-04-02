@@ -1,0 +1,275 @@
+/*
+
+--- 01 TYPOGRAPHY SYSTEM
+
+Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Secondary Heading Default: 1.2
+Paragraph default: 1.6
+Large: 1.8
+
+- Letter spacing
+0.5px
+0.75px
+
+--- 02 COLORS
+
+Primary: #e67e22
+
+Tints: #fdf2e9 #fae5d3 #eb984e
+Shades: #cf711f #45260a
+Accents:
+Greys:
+#767676
+#6f6f6f (lightest grey allowed on #fdf2e9 )
+#555
+#333
+
+--- 03 IMAGES
+--- 04 ICONS
+--- 05 SHADOWS
+box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+
+--- 06 BORDER RADIUSs
+Default: 9px;
+11px
+
+--- 07 WHITESPACE
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.8rem rgb(230, 126, 0.5);
+}
+
+html {
+    /* Percentage of user's browser font-size setting */
+    font-size: 62.5%;
+
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #555;
+    overflow-x: hidden;
+}
+
+/* GENERAL REUSABLE COMPONENTS*/
+/*******************************************/
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 3.2rem;
+}
+
+.grid {
+    display: grid;
+    row-gap: 9.6rem;
+    column-gap: 6.4rem;
+}
+
+.grid:not(:last-child) {
+    margin-bottom: 9.6rem;
+}
+
+.grid--2--cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3--cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4--cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5--cols {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--center-v {
+    align-items: center;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -0.5px;
+}
+
+.heading-primary {
+    font-size: 5.2rem;
+    line-height: 1.05;
+    margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+    font-size: 4.4rem;
+    line-height: 1.2;
+    margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+    font-size: 3.6rem;
+    line-height: 1.2;
+    margin-bottom: 3rem;
+}
+
+.subheading {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #e67e22;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    letter-spacing: 0.75px;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+    display: inline-block;
+
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1.6rem 3.2rem;
+    border-radius: 9px;
+
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+
+    transition: all 0.3s;
+}
+
+.btn--fill:link,
+.btn--fill:visited {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.btn--fill:hover,
+.btn--fill:active {
+    background-color: #cf711f;
+}
+
+.btn--empty:link,
+.btn--empty:visited {
+    background-color: #fff;
+    color: #555;
+}
+
+.btn--empty:hover,
+.btn--empty:active {
+    background-color: #fdf2e9;
+    box-shadow: inset 0 0 0 3px #fff;
+}
+
+.btn--form {
+    background-color: #45260a;
+    color: #fdf2e9;
+    padding: 1.2rem;
+    align-self: end;
+}
+.btn--form:hover {
+    background-color: #fff;
+    color: #555;
+}
+
+nav li a.nav-cta:link,
+nav li a.nav-cta:visited {
+    padding: 1.2rem 2.4rem;
+    border-radius: 9px;
+    background-color: #e67e22;
+    color: #fff;
+
+    transition: all 0.3s;
+}
+
+nav li a.nav-cta:hover,
+nav li a.nav-cta:active {
+    background-color: #cf711f;
+}
+
+strong {
+    font-weight: 500;
+}
+
+.link:link,
+.link:visited {
+    display: inline-block;
+    color: #e67e22;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+    color: #cf711f;
+    border-bottom: 1px solid transparent;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    line-height: 1.2;
+}
+
+.list-item {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.list-icon {
+    width: 3rem;
+    height: 3rem;
+    color: #e67e22;
+}
+
+.margin-right-sm {
+    margin-right: 1.6rem !important;
+}
+
+.margin-bottom-md {
+    margin-bottom: 4.8rem !important;
+}
+
+.center-text {
+    text-align: center !important;
+}
+/*******************************************/

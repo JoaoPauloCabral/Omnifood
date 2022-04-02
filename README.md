@@ -1,2 +1,2 @@
 # Omnifood
- Study purpose repository
+ This is a CSS/HTML study purpose repository
